@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "sourceMap": true, 
+    "outDir": "./build",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "strictNullChecks":false,
+    "strict": true,
+    "resolveJsonModule": true,
+    "alwaysStrict": true // adicione essa opção
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/tests"]
+}

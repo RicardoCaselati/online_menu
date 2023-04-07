@@ -1,10 +1,11 @@
 import { Schema } from 'mongoose';
+import IMenu from '../Interfaces/IMenu';
 
-const userSchema = new Schema({
-  username: String,
-  password: String,
-  image: String,
-  isAdmin: Boolean,
+const menuSchema = new Schema<IMenu>({
+  name: { type: String, required: true },
+  description: { type: String, required: true, unique: true },
+  price: { type: Number, required: true },
+  image: { type: String, required: true },
 });
 
-export default userSchema;
+export default menuSchema;

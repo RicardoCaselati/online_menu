@@ -4,9 +4,6 @@ import menuData from './menuData';
 import User from '../Models/User.model';
 import userData from './userData';
 
-
-const MONGO_DB_URL = 'mongodb://db:27017';
-
 const seedDatabase = async (
   connection: mongoose.Connection,
 ) => {

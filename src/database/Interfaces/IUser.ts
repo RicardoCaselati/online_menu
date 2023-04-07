@@ -1,8 +1,10 @@
-interface IUser {
+import { Schema, Document } from 'mongoose';
+
+interface IUser extends Document {
+  _id?: Schema.Types.ObjectId;
   name: string;
   email: string;
   password: string;
-  isAdmin: Boolean;
+  parent?: Schema.Types.ObjectId | null;
 }
-
 export default IUser;

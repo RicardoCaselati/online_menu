@@ -27,7 +27,7 @@
 ------------
 <ul>
   <li>Clone the repository: git clone git@github.com:your-username/online_menu.git</li>
-  <li>Go to the project directory: cd fabrica_de_startup_test</li>
+  <li>Go to the project directory: cd online_menu</li>
   <li>Install dependencies: npm install</li>
   <li>Start the application: npm run dev</li>
 </ul>
@@ -36,7 +36,7 @@
 ------------
 <ul>
  <li>Clone the repository: git clone git@github.com:your-username/online_menu.git</li>
- <li>Go to the project directory: cd fabrica_de_startup_test</li>
+ <li>Go to the project directory: cd online_menu</li>
  <li>Build the Docker image: docker-compose build</li>
  <li>Start the containers: docker-compose up -d</li>
 </ul>

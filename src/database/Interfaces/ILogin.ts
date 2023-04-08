@@ -5,7 +5,6 @@ interface ILogin {
   name: string,
   email: string,
   password: string,
-  parent?: Schema.Types.ObjectId | null;
 }
 
 export default ILogin;

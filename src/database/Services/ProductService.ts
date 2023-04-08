@@ -1,4 +1,3 @@
-
 import IMenu from '../Interfaces/IMenu';
 import MenuODM from '../Models/Menu.odm';
 
@@ -36,8 +35,6 @@ class ProductService {
     const listProductById = await Menu.delete(id);
     return listProductById;
   }
-
-  
 };
 
 export default ProductService;

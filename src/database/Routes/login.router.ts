@@ -1,23 +1,10 @@
 import { Router } from 'express';
-import loginController from '../Controllers/LoginController';
+import * as  LoginController from "../Controllers/LoginController";
 
 const routes = Router();
 
-routes.post('/', loginController);
+routes.post('/new-user', LoginController.LoginControllerCreate);
 
-// routes.get(
-//   '/',
-//   (req, res, next) => new CarController(req, res, next).getAll(),
-// );
-
-// routes.get(
-//   '/:id',
-//   (req, res, next) => new CarController(req, res, next).getById(),
-// );
-
-// routes.put(
-//   '/:id',
-//   (req, res, next) => new CarController(req, res, next).updateById(),
-// );
+routes.post('/', LoginController.LoginControllerFindOne);
 
 export default routes;

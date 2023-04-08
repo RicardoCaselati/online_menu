@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import productService from '../Services/ProductService';
 
-
 const ProductControllerFindAll = async (_req: Request, res: Response) => {
   const product = new productService();
   const listProducts = await product.ProductServiceFindAll();

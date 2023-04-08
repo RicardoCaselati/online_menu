@@ -4,7 +4,14 @@ import productService from '../Services/ProductService';
 
 const ProductControllerFindAll = async (_req: Request, res: Response) => {
   const product = new productService();
-  const listProducts = await product.findAll();
+  const listProducts = await product.ProductServiceFindAll();
+  if (!listProducts) return res.status(400).json({ message: 'Product not found!' });
+  res.status(200).json(listProducts);
+};
+
+const ProductControllerCreateProduct = async (req: Request, res: Response) => {
+  const product = new productService();
+  const listProducts = await product.ProductServiceCreate(req.body);
   if (!listProducts) return res.status(400).json({ message: 'Product not found!' });
   res.status(200).json(listProducts);
 };
@@ -17,4 +24,4 @@ const ProductControllerFindById = async (req: Request, res: Response) => {
   res.status(200).json(post);
 };
 
-export { ProductControllerFindAll, ProductControllerFindById };
+export { ProductControllerFindAll, ProductControllerCreateProduct, ProductControllerFindById };

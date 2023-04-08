@@ -1,5 +1,4 @@
 interface IMenu {
-  _id?: string;
   categories: string[];
   name: String,
   qty: number

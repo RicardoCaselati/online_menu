@@ -1,5 +1,9 @@
 import { Router } from 'express';
-import { ProductControllerFindAll, ProductControllerFindById } from '../Controllers/ProductController';
+import {
+  ProductControllerFindAll,
+  ProductControllerCreateProduct,
+  ProductControllerFindById,
+} from '../Controllers/ProductController';
 
 
 const routes = Router();
@@ -8,7 +12,7 @@ const routes = Router();
 routes.get('/', ProductControllerFindAll);
 
 // to create a new product
-// routes.post('/', productController);
+routes.post('/', ProductControllerCreateProduct);
 
 // to find a product by id
 routes.get('/:id', ProductControllerFindById);

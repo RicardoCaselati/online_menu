@@ -1,11 +1,6 @@
-import { Schema, model } from 'mongoose';
+import { Schema } from 'mongoose';
 
 const menuSchema = new Schema({
-  _id: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   categories: [{ type: String }],
   name: { type: String, required: true },
   qty: { type: Number, required: true },
@@ -13,3 +8,4 @@ const menuSchema = new Schema({
 });
 
 export default menuSchema;
+

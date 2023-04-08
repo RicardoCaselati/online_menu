@@ -1,11 +1,9 @@
-// import CarController from '../Controllers/CarController';
+import { Router } from 'express';
+import loginController from '../Controllers/LoginController';
 
-// const routes = Router();
+const routes = Router();
 
-// routes.post(
-//   '/',
-//   (req, res, next) => new CarController(req, res, next).create(),
-// );
+routes.post('/', loginController);
 
 // routes.get(
 //   '/',
@@ -22,4 +20,4 @@
 //   (req, res, next) => new CarController(req, res, next).updateById(),
 // );
 
-// export default routes;
+export default routes;

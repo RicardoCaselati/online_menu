@@ -18,18 +18,22 @@ abstract class AbstractODM<T> {
     this.model= model<T & Document>(this.modelName, this.schema);
   }
 
-  public async create(data: T): Promise<T> {
-    return this.model.create({ ...data });
-  }
-
   public async find(): Promise<T[]> {
     return this.model.find();
+  }
+
+  public async findOne(data: T): Promise<T | null> {
+    return this.model.findOne({ ...data });
   }
 
   public async findById(id: string): Promise<T> {
     return this.model.findOne({ _id: id }).select({ __v: 0 }).lean();
   }
-
+  
+  public async create(data: T): Promise<T> {
+    return this.model.create({ ...data });
+  }
+  
   // public async update(_id: string, obj: Partial<T>): Promise<T & Document | null> {
   //   if (!isValidObjectId(_id)) return null;
 

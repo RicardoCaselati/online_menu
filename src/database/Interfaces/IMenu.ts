@@ -1,8 +1,9 @@
-interface IUser {
+interface IMenu {
+  _id?: string;
+  categories: string[];
   name: String,
-  description: String,
-  price: Number,
-  image: String,
+  qty: number
+  price: Number
 }
 
-export default IUser;
+export default IMenu;

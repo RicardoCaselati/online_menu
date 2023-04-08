@@ -1,11 +1,10 @@
-import { Schema } from 'mongoose';
-
 const userData = [
   {
+    "_id": "1",
     "name": "Admin",
     "email": "admin@admin.com",
-    "password": "$2a$08$xi.Hxk1czAO0nZR..B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW",
-    "parent": null as unknown as Schema.Types.ObjectId
+    "password": "$2a$10$XV/0PoR/FuFtWHGbFtOg4uoiLMNEpmkEyh7svek/eNPjVKoZRHDYC"
+    // "password": "admin123456"
   }
 ];
 

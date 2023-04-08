@@ -9,7 +9,7 @@
     "strictNullChecks":false,
     "strict": true,
     "resolveJsonModule": true,
-    "alwaysStrict": true // adicione essa opção
+    "alwaysStrict": true
   },
   "include": ["src/**/*"],
   "exclude": ["src/tests"]

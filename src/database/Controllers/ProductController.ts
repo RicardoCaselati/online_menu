@@ -24,4 +24,23 @@ const ProductControllerFindById = async (req: Request, res: Response) => {
   res.status(200).json(post);
 };
 
-export { ProductControllerFindAll, ProductControllerCreateProduct, ProductControllerFindById };
+const ProductControllerUpdateById = async (req: Request, res: Response) => {
+  const product = new productService();
+  const { id } = req.params;
+  const postUpdated = await product.ProductServiceUpdateById(id, req.body);
+
+  if (postUpdated) {
+      const updatedObj = await product.ProductServiceFindById(id);
+      return res.status(200).json(updatedObj);
+  }
+
+  return res.status(404).json({ message: `Post ${id} não encontrado` });
+};
+
+
+export {
+  ProductControllerFindAll,
+  ProductControllerCreateProduct,
+  ProductControllerFindById,
+  ProductControllerUpdateById
+};

@@ -3,6 +3,7 @@ import {
   ProductControllerFindAll,
   ProductControllerCreateProduct,
   ProductControllerFindById,
+  ProductControllerUpdateById
 } from '../Controllers/ProductController';
 
 
@@ -18,7 +19,7 @@ routes.post('/', ProductControllerCreateProduct);
 routes.get('/:id', ProductControllerFindById);
 
 // to update a product by id
-// routes.patch('/:id', productController);
+routes.patch('/:id', ProductControllerUpdateById);
 
 // to delete a product by id
 // routes.delete('/:id', productController);

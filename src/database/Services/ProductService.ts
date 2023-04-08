@@ -20,6 +20,19 @@ class ProductService {
     const listProductById = await Menu.findById(id);
     return listProductById;
   }
+
+  public async ProductServiceUpdateById(id: string, product: IMenu): Promise<IMenu> {
+    const Menu = new MenuODM();
+    const updatedProduct = await Menu.findOneAndUpdate(
+      id, // primeiro argumento é o ID
+      product, // segundo argumento é o objeto a ser atualizado
+      { new: true } // terceiro argumento são as opções, incluindo "new: true"
+    );
+    return updatedProduct;
+  }
+  
+
+  
 };
 
 export default ProductService;

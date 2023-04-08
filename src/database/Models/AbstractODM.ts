@@ -34,15 +34,12 @@ abstract class AbstractODM<T> {
     return this.model.create({ ...data });
   }
   
-  // public async update(_id: string, obj: Partial<T>): Promise<T & Document | null> {
-  //   if (!isValidObjectId(_id)) return null;
-
-  //   return this.model.findByIdAndUpdate(
-  //     _id,
-  //     obj as UpdateQuery<T>,
-  //     { new: true },
-  //   );
-  // }
+  public async findOneAndUpdate(id: string, data: Partial<T>, obj: any): Promise<T | null> {
+    if (!isValidObjectId(id)) return null;
+  
+    const result = await this.model.findByIdAndUpdate(id, data, { new: true });
+    return result ? result.toObject() as T : null;
+  }
 
   public async delete(id: string): Promise<T | null> {
     if (!isValidObjectId(id)) throw Error('Invalid Mongo id');

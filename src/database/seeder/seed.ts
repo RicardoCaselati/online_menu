@@ -1,23 +1,24 @@
 import mongoose from 'mongoose';
-import Menu from '../Models/Menu.model';
-import menuData from './menuData';
 import User from '../Models/User.model';
 import userData from './userData';
+import Menu from '../Models/Menu.model';
+import menuData from './menuData';
+import Category from '../Models/Category.model';
+import categoryData from './categoryData';
 
-const seedDatabase = async (
-  connection: mongoose.Connection,
-) => {
+const seedDatabase = async (connection: mongoose.Connection) => {
   try {
-    await Menu.insertMany(menuData);
-    console.log('Menu added to database');
+    const menus = menuData.map(menu => ({
+      ...menu,
+      categories: menu.categories.map(cat => mongoose.Types.ObjectId.isValid(cat) ? new mongoose.Types.ObjectId(cat) : null),
 
+    }));
+
+    await Menu.insertMany(menus);
     await User.insertMany(userData);
-    console.log('User added to database');
+    await Category.insertMany(categoryData);
   } catch (error) {
-    console.error('Error connecting to database', error);
-  } finally {
-    mongoose.connection.close();
-    console.log('Connection closed');
+    console.error('Error inserting data', error);
   }
 };
 

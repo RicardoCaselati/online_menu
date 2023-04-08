@@ -11,6 +11,9 @@ services:
     working_dir: /app
     volumes:
       - ./:/app
+    environment:
+      - MONGO_DB_URL=mongodb://db:27017
+      - JWT_SECRET=jwt_secret
     depends_on:
       - db
   db:

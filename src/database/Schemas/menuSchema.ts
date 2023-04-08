@@ -1,11 +1,11 @@
 import { Schema } from 'mongoose';
-import IMenu from '../Interfaces/IMenu';
 
-const menuSchema = new Schema<IMenu>({
+const menuSchema = new Schema({
+  categories: [{ type: String }],
   name: { type: String, required: true },
-  description: { type: String, required: true, unique: true },
+  qty: { type: Number, required: true },
   price: { type: Number, required: true },
-  image: { type: String, required: true },
 });
 
 export default menuSchema;
+

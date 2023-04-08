@@ -1,10 +1,11 @@
 import AbstractODM from './AbstractODM';
 import IUser from '../Interfaces/IUser';
-import UserSchema from '../Schemas/userSchema';
+import userSchema from '../Schemas/userSchema';
+import { Document } from 'mongoose';
 
-class UserODM extends AbstractODM<IUser> {
+class UserODM extends AbstractODM<IUser & Document> {
   constructor() {
-    super(UserSchema, 'User');
+    super(userSchema, 'User');
   }
 }
 

@@ -15,22 +15,26 @@
 -Joi: a validator library that can be used to validate user inputs and other data in Node.js.
 </br>
 <h3>Prerequisites</h3>
+------------
 -Node.js: 16.x.x
 -Docker-compose: 3.9
 </br>
 <h3>Setup</h3>
+------------
 -Clone the repository: git clone git@github.com:RicardoCaselati/online_menu.git
 -Go to the project directory: cd fabrica_de_startup_test
 -Install dependencies: npm install
 -Start the application: npm run dev
 </br>
 <h3>Running with Docker</h3>
+------------
 -Clone the repository: git clone git@github.com:RicardoCaselati/online_menu.git
 -Go to the project directory: cd fabrica_de_startup_test
 -Build the Docker image: docker-compose build
 -Start the containers: docker-compose up -d
 </br>
 <h3>Endpoints</h3>
+------------
 </br>
 <h5>Auth</h5>
 -POST /auth/login: login with email and password to get a token

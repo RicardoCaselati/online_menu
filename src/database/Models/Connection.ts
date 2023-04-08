@@ -13,13 +13,10 @@ const connectToDatabase = async (
   try {
     await mongoose.connect(mongoDatabaseURI, {
       dbName: 'online_menu',
-      connectTimeoutMS: 10000, // aguarda 10 segundos para a conexão
+      connectTimeoutMS: 10000,
     });
     console.log('Connecting to database...');
 
-
-
-    // Executa operações no banco de dados
     await Menu.deleteMany();
     await User.deleteMany();
     await Category.deleteMany();

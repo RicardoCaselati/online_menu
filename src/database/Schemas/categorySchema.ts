@@ -1,11 +1,6 @@
 import { Schema, model } from 'mongoose';
 
 const CategorySchema = new Schema({
-  // _id: {
-  //   type: String,
-  //   required: true,
-  //   unique: true,
-  // },
   name: {
     type: String,
     required: true,
@@ -14,6 +9,6 @@ const CategorySchema = new Schema({
     type: String,
     ref: 'Category',
   },
-}, {_id: false});
+});
 
 export default CategorySchema;

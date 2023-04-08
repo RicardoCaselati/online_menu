@@ -1,4 +1,3 @@
-
 import ICategory from '../Interfaces/ICategory';
 import CategoryODM from '../Models/Category.odm';
 

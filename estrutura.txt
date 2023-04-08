@@ -1,0 +1,54 @@
+.
+├── docker-compose.yaml
+├── Dockerfile
+├── estrutura.txt
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── app.ts
+│   ├── database
+│   │   ├── Controllers
+│   │   │   ├── CategoryController.ts
+│   │   │   ├── LoginController.ts
+│   │   │   └── ProductController.ts
+│   │   ├── Interfaces
+│   │   │   ├── ICategory.ts
+│   │   │   ├── ILogin.ts
+│   │   │   ├── IMenu.ts
+│   │   │   └── IUser.ts
+│   │   ├── middlewares
+│   │   │   └── auth.middleware.ts
+│   │   ├── Models
+│   │   │   ├── AbstractODM.ts
+│   │   │   ├── Category.model.ts
+│   │   │   ├── Category.odm.ts
+│   │   │   ├── Connection.ts
+│   │   │   ├── Menu.model.ts
+│   │   │   ├── Menu.odm.ts
+│   │   │   ├── User.model.ts
+│   │   │   └── User.odm.ts
+│   │   ├── Routes
+│   │   │   ├── category.router.ts
+│   │   │   ├── login.router.ts
+│   │   │   ├── product.router.ts
+│   │   │   └── router.ts
+│   │   ├── Schemas
+│   │   │   ├── categorySchema.ts
+│   │   │   ├── menuSchema.ts
+│   │   │   └── userSchema.ts
+│   │   ├── seeder
+│   │   │   ├── categoryData.ts
+│   │   │   ├── menuData.ts
+│   │   │   ├── seed.ts
+│   │   │   └── userData.ts
+│   │   ├── Services
+│   │   │   ├── CategoryService.ts
+│   │   │   ├── LoginServices.ts
+│   │   │   └── ProductService.ts
+│   │   └── Validations
+│   │       └── loginJoiSchema.ts
+│   └── server.ts
+└── tsconfig.json
+
+11 directories, 41 files

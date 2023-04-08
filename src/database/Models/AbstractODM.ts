@@ -1,10 +1,8 @@
 import {
   Model,
-  models,
   Schema,
   model,
   isValidObjectId,
-  UpdateQuery,
 } from 'mongoose';
 
 abstract class AbstractODM<T> {

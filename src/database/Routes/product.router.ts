@@ -3,7 +3,8 @@ import {
   ProductControllerFindAll,
   ProductControllerCreateProduct,
   ProductControllerFindById,
-  ProductControllerUpdateById
+  ProductControllerUpdateById,
+  ProductControllerDeleteById,
 } from '../Controllers/ProductController';
 
 
@@ -22,6 +23,6 @@ routes.get('/:id', ProductControllerFindById);
 routes.patch('/:id', ProductControllerUpdateById);
 
 // to delete a product by id
-// routes.delete('/:id', productController);
+routes.delete('/:id', ProductControllerDeleteById);
 
 export default routes;

@@ -37,10 +37,22 @@ const ProductControllerUpdateById = async (req: Request, res: Response) => {
   return res.status(404).json({ message: `Post ${id} não encontrado` });
 };
 
+const ProductControllerDeleteById = async (req: Request, res: Response) => {
+  const product = new productService();
+  const { id } = req.params;
+  const post = await product.ProductServiceDeleteById(id);
+  if (!post) {
+    return res.status(404).json({ message: 'Product does not exist' });
+  }
+  return res.status(200).json(post);
+};
+
+
 
 export {
   ProductControllerFindAll,
   ProductControllerCreateProduct,
   ProductControllerFindById,
-  ProductControllerUpdateById
+  ProductControllerUpdateById,
+  ProductControllerDeleteById
 };

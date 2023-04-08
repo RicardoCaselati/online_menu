@@ -24,13 +24,18 @@ class ProductService {
   public async ProductServiceUpdateById(id: string, product: IMenu): Promise<IMenu> {
     const Menu = new MenuODM();
     const updatedProduct = await Menu.findOneAndUpdate(
-      id, // primeiro argumento é o ID
-      product, // segundo argumento é o objeto a ser atualizado
-      { new: true } // terceiro argumento são as opções, incluindo "new: true"
+      id,
+      product,
+      { new: true }
     );
     return updatedProduct;
   }
   
+  public async ProductServiceDeleteById(id: string): Promise<IMenu> {
+    const Menu = new MenuODM();
+    const listProductById = await Menu.delete(id);
+    return listProductById;
+  }
 
   
 };
